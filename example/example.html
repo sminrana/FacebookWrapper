@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Facebook JS SDK Example</title>
+
+    <script src="../fb_authentication.js"></script>
+</head>
+<body>
+
+<script>
+
+// Grab your facebook app id from developer console
+// Call wrapper function to get facebook data if authenticate successful
+FACEBOOK_APP_ID = 'YOUR_APP_ID';
+var fb = new FacebookAuthentication();
+fb.authenticateFacebook(
+    FACEBOOK_APP_ID,
+    function(name, email, fbId, accessToken, expiresIn) {
+
+        console.log('============================================');
+        console.log(" name: " + name);
+        console.log(" email: " + email);
+        console.log(" fb_id: " + fbId);
+        console.log(" token: " + accessToken);
+        console.log(" expire: " + expiresIn);
+
+        // Change your UI when authentication success, like Logout Button
+    },
+    function(status) {
+        console.log(">>> authentication failed: " + status)
+
+        // Change your UI when authentication failed, like Login Button
+    }
+);
+
+function login() {
+    fb.login();
+}
+
+function logout() {
+    fb.logOut();
+}
+
+</script>
+
+</body>
+</html>
