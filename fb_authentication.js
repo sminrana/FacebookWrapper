@@ -1,7 +1,8 @@
 /**
  * Wrapper JS file to supports Facebook authentication
  * Created by sminrana@gmail.com on 3/3/16.
- *
+ *  
+ * Github: https://github.com/sminrana/FacebookWrapper.git 
  * Facebook JS SDK website: https://developers.facebook.com/docs/javascript
  */
 
